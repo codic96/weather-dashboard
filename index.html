@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for clean icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1><i class="fa-solid fa-cloud-sun"></i> SkyCast</h1>
+            <button id="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Sidebar: Search & History -->
+        <aside class="sidebar">
+            <section class="search-section">
+                <form id="search-form">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="search-input" placeholder="Enter city name..." required autocomplete="off">
+                        <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+            </section>
+            
+            <section class="history-section">
+                <h3>Recent Searches</h3>
+                <ul id="history-list">
+                    <!-- Dynamic history items go here -->
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Main Display Content -->
+        <section class="weather-content">
+            <div id="error-message" class="error-card hidden"></div>
+            <div id="loading-spinner" class="spinner hidden"></div>
+
+            <div id="weather-dashboard-view" class="hidden">
+                <!-- Current Weather -->
+                <div id="current-weather" class="card">
+                    <!-- Dynamic Content -->
+                </div>
+
+                <!-- 5-Day Forecast -->
+                <div class="forecast-section">
+                    <h2>5-Day Forecast</h2>
+                    <div id="forecast-container" class="forecast-grid">
+                        <!-- Dynamic Cards -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Default welcome screen state -->
+            <div id="welcome-message" class="empty-state-card">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>Search for a city to discover current weather patterns and 5-day forecasts.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
